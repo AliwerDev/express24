@@ -66,7 +66,7 @@ if(!userUid){
 	minUser.innerHTML = "";
 	const login = myCreateElement('button', {className: "btn", innerHTML: "Log In"}, minUser)
 	login.addEventListener('click', () => {
-		creatSignInForm(document.querySelector("body"))
+		loginPage.classList.remove("d-none")
 	})
 }
 
@@ -74,6 +74,7 @@ function isHaveUser(id) {
 	if(id){
 		minUser.innerHTML = "";
 		const user = myCreateElement("div", {className: "user", innerHTML: `<i class="fas fa-user"></i>`}, minUser);
+
 		user.addEventListener('click', () => {
 			console.log("user Profile")
 		})

@@ -1,15 +1,22 @@
-import {myCreateElement} from "./functions.js";
-import {addCategory, addProduct, getCategories} from "./firebase.js";
+import {korzinkaRender, myCreateElement} from "./functions.js";
+import {
+	addCategory,
+	addProduct,
+	addProductToKorzina,
+	getAllProducts,
+	getCategories, getKorzina,
+	getOneCategory
+} from "./firebase.js";
 
 const renderCategories = (father, data) => {
 	categoriesContainer.innerHTML = "";
-	const ul = myCreateElement("ul", {className: "ull px-3", }, father);
+	const ul = myCreateElement("ul", {className: "ull pt-4 px-3", }, father);
 
 	const dataArr = Object.values(data);
 	dataArr.map((item, i) => {
 		const li = myCreateElement("li", {className: "", innerHTML: item[0].toUpperCase() + item.slice(1).toLowerCase()}, ul);
 		li.addEventListener('click', () => {
-			console.log("hello")
+			getOneCategory(item, oneCategoryRender)
 		})
 	})
 }
@@ -127,16 +134,22 @@ function productAddFromRender(father, categories) {
 
 
 //Main Products page
-function userSectionRender(arr, father) {
+function userSectionRender(title, obj, father) {
+
 	const container = myCreateElement(
 		"div",
-		{ className: "container" },
+		{ className: "container py-4" },
 		father
 	);
 
+	myCreateElement("h3", {className: "titleCategory mb-3", innerHTML: title[0].toUpperCase() + title.slice(1).toLowerCase()}, container);
 	const row = myCreateElement("div", { className: "row" }, container);
 
-	arr.map((item) => {
+	const arr = Object.entries(obj)
+
+	arr.map((element) => {
+		const item = element[1];
+		const id = element[0];
 		const col = myCreateElement("div", { className: "col-md-4 product-box" }, row);
 
 		const card = myCreateElement("div", { className: "card" }, col);
@@ -162,13 +175,43 @@ function userSectionRender(arr, father) {
 
 
 		addBtn.addEventListener("click",() =>{
-
-			console.log("Zakaz qabuul qilindi");
-
+			const obj = {
+				category: title,
+				name: item.productName,
+				img: item.img,
+				price: item.price,
+				productId: id,
+				soni: 1,
+			}
+			addProductToKorzina(userUid, obj)
 		})
 	});
 }
 
-getCategories(categoriesContainer, renderCategories);
+function allDataRender(obj){
+	const Arr = Object.entries(obj);
+	productsContainer.innerHTML = "";
+
+	Arr.map((item => {
+		console.log(item)
+		const title = item[0];
+		const arr = item[1];
+
+		userSectionRender(title, arr, productsContainer)
+	}))
+}
+
+function oneCategoryRender(obj, title){
+	productsContainer.innerHTML = "";
+	const arr = Object.values(obj);
+	userSectionRender(title, arr, productsContainer)
+}
+
+document.querySelector("body").addEventListener('load', () => {
+	getAllProducts(allDataRender)
+	getCategories(categoriesContainer, renderCategories);
+	getKorzina(korzinkaBox, userUid, korzinkaRender);
+})
+
 export {renderAddCategory, productAddFromRender}
 

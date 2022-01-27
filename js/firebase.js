@@ -34,6 +34,7 @@ function createUser (userData, password) {
 	console.log(userData)
 	createUserWithEmailAndPassword(auth, userData.email, password)
 		.then((cred) => {
+			console.log(cred)
 			const userData2 = userData;
 			userData2.uid = cred.user.uid;
 			isHaveUser(cred.user.uid);
@@ -41,7 +42,7 @@ function createUser (userData, password) {
 			addUser(userData2)
 		})
 		.catch(e => {
-			console.log(e)
+			alert("xatolik")
 		})
 }
 
@@ -95,11 +96,17 @@ function getUserData(uid, callback){
 }
 
 function getAllProducts(callback){
-	onValue(ref(db, `categories`), (data) => {
-		console.log(data.val())
-		callback(father, data.val() || {});
+	onValue(ref(db, `products`), (data) => {
+		callback(data.val() || {});
 	})
 }
+function getOneCategory(category, callback) {
+	onValue(ref(db, `products/` + category), (data) => {
+		console.log(data.val())
+		callback(data.val() || {}, category );
+	})
+}
+
 
 
 //Products
@@ -125,6 +132,19 @@ const getCategories = (father, callback) => {
 	})
 }
 
+const addProductToKorzina = (uid, obj) => {
+	set(ref(db, `users/` + uid + "/korzinka/" + obj.productId), obj)
+		.then(() => {
+			alert("Product Qo`shildi")
+		})
+		.catch(err => console.log(err));
+}
+const getKorzina = (father, uid, callback) => {
+	onValue(ref(db, `users/${uid}/korzinka`), (data) => {
+		callback(father, data.val() || {});
+	})
+}
 
-export {getUserData, signIn, addProduct, createUser, addCategory, getCategories, updateUserData}
+
+export {getKorzina, addProductToKorzina, getUserData, signIn, addProduct, createUser, addCategory, getCategories,getOneCategory, updateUserData, getAllProducts}
 
