@@ -34,7 +34,6 @@ signupForm.addEventListener("submit", (e) => {
 		phone: signupForm.phone.value,
 		userName: signupForm.userName.value,
 	}
-	alert(userData.phone)
 	createUser(userData, signupForm.password.value);
 })
 

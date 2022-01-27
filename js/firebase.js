@@ -35,6 +35,7 @@ function createUser (userData, password) {
 	createUserWithEmailAndPassword(auth, userData.email, password)
 		.then((cred) => {
 			console.log(cred)
+			alert("Saytga muvaffaqqiyatli kirdingiz!")
 			const userData2 = userData;
 			userData2.uid = cred.user.uid;
 			isHaveUser(cred.user.uid);
@@ -42,7 +43,6 @@ function createUser (userData, password) {
 			addUser(userData2)
 		})
 		.catch(e => {
-			alert("xatolik")
 		})
 }
 function signOutUser (callback = () => {}) {
