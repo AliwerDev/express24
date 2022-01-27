@@ -59,16 +59,17 @@
 
 }
 
-
+.reklama {
+  width: 100%;
+  img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+  }
+}
 .mainSection{
   width: 100%;
-  .reklama {
-    width: 100%;
-    img {
-      object-fit: cover;
-      width: 100%;
-    }
-  }
+
 }
 h1 h2 h3 h4 h5 h6 p{
   margin: 0;

@@ -64,7 +64,7 @@ yetkazilganPageBtn.addEventListener('click', () => {
 
 if(!userUid){
 	minUser.innerHTML = "";
-	const login = myCreateElement('button', {className: "btn", innerHTML: "Log In"}, minUser)
+	const login = myCreateElement('button', {className: "btn btn-success", innerHTML: "Log In"}, minUser)
 	login.addEventListener('click', () => {
 		loginPage.classList.remove("d-none")
 	})
