@@ -163,7 +163,7 @@ function userSectionRender(title, obj, father) {
 		);
 
 		const addBtnBlock = myCreateElement("div", { className: "addBtnBlock" }, imgBtnBlock);
-		const addBtn = myCreateElement("button", { className: "btn btn-primary", innerHTML: "Qoshish" }, addBtnBlock);
+		const addBtn = myCreateElement("button", { className: "btn myBtn-primary", innerHTML: "Qoshish" }, addBtnBlock);
 
 
 
