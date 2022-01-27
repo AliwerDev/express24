@@ -1,5 +1,10 @@
 .admin-page{
+  height: 100vh;
+  background: #fff;
+  position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   aside {
     min-height: 100vh;

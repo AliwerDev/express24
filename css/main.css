@@ -212,7 +212,12 @@ img {
 }
 
 .admin-page {
+  height: 100vh;
+  background: #fff;
+  position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
   display: flex;
 }
 .admin-page aside {
@@ -290,6 +295,31 @@ img {
   font-family: "Poppins", sans-serif;
 }
 
+.timesLogin, .timesAdmin {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  background: #fff;
+  cursor: pointer;
+}
+.timesLogin i, .timesAdmin i {
+  font-size: 30px;
+  color: yellow;
+}
+
+.timesLogin {
+  left: 20px;
+}
+
+.timesAdmin {
+  right: 20px;
+}
+
 .login-page {
   width: 100%;
   display: grid;
@@ -301,23 +331,6 @@ img {
   top: 0;
   left: 0;
   z-index: 999;
-}
-.login-page .timesLogin {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  background: #fff;
-  left: 20px;
-  cursor: pointer;
-}
-.login-page .timesLogin i {
-  font-size: 30px;
-  color: yellow;
 }
 
 ::selection {

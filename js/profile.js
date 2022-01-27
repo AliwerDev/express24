@@ -64,7 +64,11 @@ yetkazilganPageBtn.addEventListener('click', () => {
 
 if(!userUid){
 	minUser.innerHTML = "";
-	const login = myCreateElement('button', {className: "btn btn-success", innerHTML: "Log In"}, minUser)
+	const login = myCreateElement('button', {className: "btn btn-success mx-2", innerHTML: "Log In"}, minUser)
+	const admin = myCreateElement('button', {className: "btn btn-warning mx-2", innerHTML: "Admin Page"}, minUser)
+	admin.addEventListener("click", () => {
+		adminPage.classList.remove("d-none");
+	})
 	login.addEventListener('click', () => {
 		loginPage.classList.remove("d-none")
 	})
@@ -103,7 +107,6 @@ function renderProfile(obj) {
 	const infoColRight = myCreateElement("div", { className: "col-md-6" }, row);
 	const logOut = myCreateElement("button", {className: "btn btn-primary mx-2", innerHTML: "Sing Out"}, infoColRight);
 	const korBtn = myCreateElement("button", {className: "btn btn-primary mx-2", innerHTML: "Mening Korzinkam"}, infoColRight);
-	const adminBtn = myCreateElement("button", {className: "btn btn-primary mx-2", innerHTML: "Admin Page"}, infoColRight);
 
 	korBtn.addEventListener("click", () => {
 		getKorzina(korzinkaBox, userUid, korzinkaRender)
@@ -115,10 +118,7 @@ function renderProfile(obj) {
 			}
 		});
 	})
-	adminBtn.addEventListener('click' , () => {
-		adminPage.classlist.remove("d-none")
-		productsBlock.classList.add("d-none")
-	})
+
 	const profileTitle = myCreateElement(
 		"h2",
 		{ className: "profileTitle", innerHTML: "Account" },

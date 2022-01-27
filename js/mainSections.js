@@ -31,7 +31,7 @@ const renderAddCategory = (father) => {
 
 	addCategoryForm.addEventListener('submit', (e) => {
 		e.preventDefault();
-		addCategory(addCategoryForm.category.value)
+		addCategory(addCategoryForm.category.value, addCategoryForm)
 	})
 }
 
@@ -128,7 +128,7 @@ function productAddFromRender(father, categories) {
 			price: priceProduct.value,
 		}
 
-		addProduct(category, obj, categoryForm);
+		addProduct(category, obj, categoryForm, categoryForm);
 	})
 }
 

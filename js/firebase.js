@@ -121,9 +121,11 @@ function getOneCategory(category, callback) {
 
 
 //Products
-const addCategory = (category) => {
+const addCategory = (category, form) => {
 	set(ref(db, `categories/` + category.toLowerCase()), category.toLowerCase())
 		.then(() => {
+			alert("Category qo`shildi")
+			form.reset();
 		})
 		.catch(err => console.log(err));
 }

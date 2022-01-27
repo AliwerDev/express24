@@ -4,6 +4,28 @@
 
 }
 
+.timesLogin, .timesAdmin{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  background: #fff;
+  cursor: pointer;
+  i{
+    font-size: 30px;
+    color: yellow;
+  }
+}
+.timesLogin{
+  left: 20px;
+}
+.timesAdmin{
+  right: 20px;
+}
 .login-page{
   width: 100%;
   display: grid;
@@ -15,23 +37,6 @@
   top: 0;
   left: 0;
   z-index: 999;
-  .timesLogin{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    background: #fff;
-    left: 20px;
-    cursor: pointer;
-    i{
-      font-size: 30px;
-      color: yellow;
-    }
-  }
 }
 ::selection {
   background: #d3c60d;
