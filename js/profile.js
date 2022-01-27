@@ -1,6 +1,66 @@
-import {getUserData, updateUserData} from "./firebase.js";
+import {getCategories, getUserData, updateUserData} from "./firebase.js";
 import {myCreateElement} from "./functions.js";
 import {creatSignInForm} from "./logIn.js";
+import {productAddFromRender, renderAddCategory} from "./mainSections.js";
+
+const qushishPageBtn = document.querySelector("#qushishPageBtn")
+const arizalarPageBtn = document.querySelector("#arizalarPageBtn")
+const foydalanuvchilarPageBtn = document.querySelector("#foydalanuvchilarPageBtn")
+const statistikaPageBtn = document.querySelector("#statistikaPageBtn")
+const yetkazilganPageBtn = document.querySelector("#yetkazilganPageBtn");
+
+const qushishPage = document.querySelector(".qushishPage")
+const arizalarPage = document.querySelector(".arizalarPage")
+const foydalanuvchilarPage = document.querySelector(".foydalanuvchilarPage")
+const statistikaPage = document.querySelector(".statistikaPage")
+const yetkazilganPage = document.querySelector(".yetkazilganPage");
+
+const productAddBtn = qushishPage.querySelector('.productAddBtn')
+const categoryAddBtn = qushishPage.querySelector('.categoryAddBtn')
+
+
+categoryAddBtn.addEventListener('click', () => {
+	productAddBtn.classList.remove("active");
+	categoryAddBtn.classList.add("active");
+	renderAddCategory(qushishPage.querySelector(".content"))
+})
+
+productAddBtn.addEventListener('click', () => {
+	categoryAddBtn.classList.remove("active");
+	productAddBtn.classList.add("active");
+	getCategories(qushishPage.querySelector(".content"), productAddFromRender)
+})
+
+function allDNone(){
+	console.log("hello")
+	qushishPage.classList.add("d-none");
+	arizalarPage.classList.add("d-none");
+	foydalanuvchilarPage.classList.add("d-none");
+	statistikaPage.classList.add("d-none");
+	yetkazilganPage.classList.add("d-none");
+}
+
+qushishPageBtn.addEventListener('click', () => {
+	allDNone();
+	qushishPage.classList.remove("d-none")
+})
+
+arizalarPageBtn.addEventListener('click', () => {
+	allDNone();
+	arizalarPage.classList.remove("d-none")
+})
+foydalanuvchilarPageBtn.addEventListener('click', () => {
+	allDNone();
+	foydalanuvchilarPage.classList.remove("d-none")
+})
+statistikaPageBtn.addEventListener('click', () => {
+	allDNone();
+	statistikaPage.classList.remove("d-none")
+})
+yetkazilganPageBtn.addEventListener('click', () => {
+	allDNone();
+	yetkazilganPage.classList.remove("d-none")
+})
 
 if(!userUid){
 	minUser.innerHTML = "";
@@ -18,11 +78,10 @@ function isHaveUser(id) {
 			console.log("user Profile")
 		})
 	}
-	getUserData(id, renderProfile);
+	// getUserData(id, renderProfile);
 }
 
 function renderProfile(obj) {
-	console.log(obj);
 	const mainSection = myCreateElement(
 		"section",
 		{ className: "mx-auto text-center", id: "profileSection" },

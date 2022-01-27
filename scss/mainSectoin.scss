@@ -1,3 +1,21 @@
+.myBtn-primary{
+  background: #FFEC00;
+  border-radius: 10px;
+  padding : 8px 16px;
+  font-size:  18px;
+  font-weight : 600;
+}
+
+.secondaryBtn {
+  background: rgba(255, 220, 3, 0.65) !important;
+  border-radius: 10px;
+  padding : 8px 16px;
+  letter-spacing: 0.44px;
+  font-size: 18px;
+
+}
+
+
 .mainSection{
   width: 100%;
   .reklama {
@@ -14,7 +32,9 @@ h1 h2 h3 h4 h5 h6 p{
 }
 .categories-container{
   ul{
+    width: 100%;
     li{
+      display: inline-block !important;
       cursor: pointer;
       list-style-type: none;
       border: 0 solid black ;
@@ -25,7 +45,6 @@ h1 h2 h3 h4 h5 h6 p{
       background-color: #F0F0F0;
       text-decoration: none;
       color: black;
-      display: inline-flex;
       &:hover{
         color: #000;
       }

@@ -79,6 +79,22 @@ nav .minUser .user i {
   }
 }
 
+.myBtn-primary {
+  background: #FFEC00;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.secondaryBtn {
+  background: rgba(255, 220, 3, 0.65) !important;
+  border-radius: 10px;
+  padding: 8px 16px;
+  letter-spacing: 0.44px;
+  font-size: 18px;
+}
+
 .mainSection {
   width: 100%;
 }
@@ -95,7 +111,11 @@ h1 h2 h3 h4 h5 h6 p {
   padding: 0;
 }
 
+.categories-container ul {
+  width: 100%;
+}
 .categories-container ul li {
+  display: inline-block !important;
   cursor: pointer;
   list-style-type: none;
   border: 0 solid black;
@@ -106,7 +126,6 @@ h1 h2 h3 h4 h5 h6 p {
   background-color: #F0F0F0;
   text-decoration: none;
   color: black;
-  display: inline-flex;
 }
 .categories-container ul li:hover {
   color: #000;
@@ -143,6 +162,81 @@ img {
 }
 .foodsBox:hover .hoverBtn .hoverBtn:hover {
   transition: 0.9;
+}
+
+.admin-page {
+  width: 100%;
+  display: flex;
+}
+.admin-page aside {
+  min-height: 100vh;
+  width: 350px;
+  background: #fffced;
+}
+.admin-page aside .menu ul {
+  padding: 20px;
+  list-style-type: none;
+}
+.admin-page aside .menu ul li {
+  padding: 10px 20px !important;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.admin-page aside .menu ul li i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+.admin-page aside .menu ul li div .fw-bold {
+  font-size: 22px;
+}
+.admin-page aside .menu ul li div p {
+  font-size: 18px;
+  margin: 0;
+}
+.admin-page aside .menu ul li:hover {
+  background-color: #ffdc03;
+}
+.admin-page .admin-main-page {
+  flex: 1;
+  padding: 20px;
+}
+.admin-page .admin-main-page h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.admin-page .admin-main-page p {
+  font-size: 18px;
+}
+.admin-page .admin-main-page .btns {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+.admin-page .admin-main-page .btns button {
+  background: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  letter-spacing: 0.44px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.admin-page .admin-main-page .btns button.active {
+  background: #FFEC00;
+  padding: 8px 16px;
+}
+.admin-page .admin-main-page .content {
+  padding: 40px 10px;
+}
+.admin-page .admin-main-page .content input, .admin-page .admin-main-page .content textarea, .admin-page .admin-main-page .content select {
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
 }
 
 /*# sourceMappingURL=main.css.map */

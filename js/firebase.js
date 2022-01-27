@@ -94,6 +94,13 @@ function getUserData(uid, callback){
 	})
 }
 
+function getAllProducts(callback){
+	onValue(ref(db, `categories`), (data) => {
+		console.log(data.val())
+		callback(father, data.val() || {});
+	})
+}
+
 
 //Products
 const addCategory = (category) => {
@@ -102,14 +109,22 @@ const addCategory = (category) => {
 		})
 		.catch(err => console.log(err));
 }
+const addProduct = (category, data, form) => {
+	push(ref(db, `products/` + category.toLowerCase()), data)
+		.then(() => {
+			form.reset();
+			alert("Product Qo`shildi")
+		})
+		.catch(err => console.log(err));
+}
 
-const getCategories = (callback) => {
+const getCategories = (father, callback) => {
 	onValue(ref(db, `categories`), (data) => {
 		console.log(data.val())
-		callback(data.val() || {});
+		callback(father, data.val() || {});
 	})
 }
 
 
-export {getUserData, signIn, createUser, addCategory, getCategories, updateUserData}
+export {getUserData, signIn, addProduct, createUser, addCategory, getCategories, updateUserData}
 

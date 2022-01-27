@@ -47,11 +47,71 @@
 </nav>
 
 <section class="mainSection">
-    <div class="reklama">
+    <div class="d-none reklama">
         <img src="./images/mainImg.png" alt="expressHome" />
     </div>
-    <div class="container">
+    <div class="container products-container">
         <div class="categories-container"></div>
+    </div>
+    <div class="admin-page d-none">
+        <aside>
+            <div class="menu">
+                <ul>
+                    <li id="qushishPageBtn">
+                        <i class="fas fa-plus"></i>
+                        <div>
+                            <p class="fw-bold">Qoshish</p>
+                            <p>Yangi kategoriya / taom qo'shish</p>
+                        </div>
+                    </li>
+                    <li id="arizalarPageBtn">
+                        <i class="fas fa-circle-notch"></i>
+                        <div>
+                            <p class="fw-bold">Arizalar</p>
+                            <p>Kelip tushgan arizalarni kuzatishingiz mumkin</p>
+                        </div>
+                    </li>
+                    <li id="yetkazilganPageBtn">
+                        <i class="fas fa-check"></i>
+                        <div>
+                            <p class="fw-bold">Yetkazilgan</p>
+                            <p>Yetkazilgan maxsulotlar haqida malummot olish</p>
+                        </div>
+                    </li>
+                    <li id="statistikaPageBtn">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>
+                            <p class="fw-bold">Statistika</p>
+                            <p>Diagrammalar bilan ishlash statistikasi</p>
+                        </div>
+                    </li>
+                    <li id="foydalanuvchilarPageBtn">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <p class="fw-bold">Foydalanuvchilar</p>
+                            <p>Rollarni biriktirish mumkun</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="admin-main-page">
+            <div class="qushishPage ">
+                <h3>Qo`shish</h3>
+                <p>Yangi kategoriya/taom qo’shish </p>
+
+                <div class="btns">
+                    <button type="button" class="categoryAddBtn">Kategoriya</button>
+                    <button type="button" class="productAddBtn">Taom</button>
+                </div>
+
+                <div class="content"></div>
+            </div>
+            <div class="arizalarPage d-none"></div>
+            <div class="yetkazilganPage d-none"></div>
+            <div class="statistikaPage d-none"></div>
+            <div class="foydalanuvchilarPage d-none"></div>
+        </div>
     </div>
 </section>
 
