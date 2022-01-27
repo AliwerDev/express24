@@ -139,14 +139,16 @@ nav .minUser .user i {
   font-size: 18px;
 }
 
-.mainSection {
+.reklama {
   width: 100%;
 }
-.mainSection .reklama {
-  width: 100%;
-}
-.mainSection .reklama img {
+.reklama img {
+  height: 100vh;
   object-fit: cover;
+  width: 100%;
+}
+
+.mainSection {
   width: 100%;
 }
 
@@ -170,9 +172,10 @@ h1 h2 h3 h4 h5 h6 p {
   background-color: #F0F0F0;
   text-decoration: none;
   color: black;
+  transition: all 0.3s ease-in-out;
 }
 .categories-container ul li:hover {
-  color: #000;
+  background: #FFEC00 !important;
 }
 
 .text11 {
