@@ -45,6 +45,17 @@ function createUser (userData, password) {
 			alert("xatolik")
 		})
 }
+function signOutUser (callback = () => {}) {
+	signOut(auth)
+		.then(() => {
+			callback(true);
+			console.log("user Chiqib ketti")
+		})
+		.catch(() => {
+			callback(false);
+			console.log("user chiqib keta olmadi")
+		});
+}
 
 function signIn(dataUser) {
 	signInWithEmailAndPassword(auth, dataUser.email, dataUser.password)
@@ -140,11 +151,13 @@ const addProductToKorzina = (uid, obj) => {
 		.catch(err => console.log(err));
 }
 const getKorzina = (father, uid, callback) => {
+	console.log(uid)
 	onValue(ref(db, `users/${uid}/korzinka`), (data) => {
+		console.log(data.val())
 		callback(father, data.val() || {});
 	})
 }
 
 
-export {getKorzina, addProductToKorzina, getUserData, signIn, addProduct, createUser, addCategory, getCategories,getOneCategory, updateUserData, getAllProducts}
+export {getKorzina,signOutUser, addProductToKorzina, getUserData, signIn, addProduct, createUser, addCategory, getCategories,getOneCategory, updateUserData, getAllProducts}
 

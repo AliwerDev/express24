@@ -22,7 +22,6 @@ signupLink.onclick = () => {
 };
 
 loginForm.addEventListener("submit", (e) => {
-	e.preventDefault();
 	const userData = {
 		email: loginForm.email.value,
 		password: loginForm.password.value,
@@ -30,7 +29,6 @@ loginForm.addEventListener("submit", (e) => {
 	signIn(userData)
 })
 signupForm.addEventListener("submit", (e) => {
-	e.preventDefault()
 	const userData = {
 		email: signupForm.email.value,
 		phone: signupForm.phone.value,

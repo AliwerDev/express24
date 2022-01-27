@@ -152,13 +152,13 @@ function userSectionRender(title, obj, father) {
 		const id = element[0];
 		const col = myCreateElement("div", { className: "col-md-4 product-box" }, row);
 
-		const card = myCreateElement("div", { className: "card" }, col);
+		const card = myCreateElement("div", { className: "card mb-3" }, col);
 
 		const imgBtnBlock = myCreateElement("div", { className: "imgBtnBlock"} , card );
 
 		myCreateElement(
 			"img",
-			{ className: "img-fluid w-100", src: item.img },
+			{ className: "img-fluid product-img w-100", src: item.img },
 			imgBtnBlock
 		);
 
@@ -207,11 +207,12 @@ function oneCategoryRender(obj, title){
 	userSectionRender(title, arr, productsContainer)
 }
 
-document.querySelector("body").addEventListener('load', () => {
+const load = () => {
 	getAllProducts(allDataRender)
 	getCategories(categoriesContainer, renderCategories);
-	getKorzina(korzinkaBox, userUid, korzinkaRender);
-})
+}
+window.load = load;
+
 
 export {renderAddCategory, productAddFromRender}
 

@@ -1,5 +1,5 @@
-import {getCategories, getUserData, updateUserData} from "./firebase.js";
-import {myCreateElement} from "./functions.js";
+import {getCategories, getKorzina, getUserData, signOutUser, updateUserData} from "./firebase.js";
+import {korzinkaRender, myCreateElement} from "./functions.js";
 import {creatSignInForm} from "./logIn.js";
 import {productAddFromRender, renderAddCategory} from "./mainSections.js";
 
@@ -76,10 +76,9 @@ function isHaveUser(id) {
 		const user = myCreateElement("div", {className: "user", innerHTML: `<i class="fas fa-user"></i>`}, minUser);
 
 		user.addEventListener('click', () => {
-			console.log("user Profile")
+			getUserData(id, renderProfile);
 		})
 	}
-	// getUserData(id, renderProfile);
 }
 
 function renderProfile(obj) {
@@ -98,10 +97,23 @@ function renderProfile(obj) {
 	const row = myCreateElement("div", { className: "row" }, container);
 	const infoColLeft = myCreateElement(
 		"div",
-		{ className: "col-md-4 col-left" },
+		{ className: "col-md-6 col-left" },
 		row
 	);
-	const infoColRight = myCreateElement("div", { className: "col-md-8" }, row);
+	const infoColRight = myCreateElement("div", { className: "col-md-6" }, row);
+	const logOut = myCreateElement("button", {className: "btn btn-primary", innerHTML: "Sing Out"}, infoColRight);
+	const korBtn = myCreateElement("button", {className: "btn btn-primary", innerHTML: "Mening Korzinkam"}, infoColRight);
+
+	korBtn.addEventListener("click", () => {
+		getKorzina(korzinkaBox, userUid, korzinkaRender)
+	})
+	logOut.addEventListener("click", () => {
+		signOutUser((res) => {
+			if (res) {
+				window.location.reload();
+			}
+		});
+	})
 
 	const profileTitle = myCreateElement(
 		"h2",
