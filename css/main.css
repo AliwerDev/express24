@@ -1,0 +1,148 @@
+input, button {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  border-bottom: 2px solid #DEDEDE;
+}
+nav .logo img {
+  width: 200px;
+}
+nav .logo .image2 {
+  display: none;
+}
+nav .logo .image1 {
+  display: block;
+}
+nav .search {
+  width: 300px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+nav .search input {
+  width: 100%;
+  padding: 10px;
+  flex: 1;
+}
+nav .search button {
+  background: none;
+}
+nav .search button i {
+  color: #bfbfbf;
+  font-size: 18px;
+}
+nav .minUser .user {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .minUser .user i {
+  font-size: 18px;
+  color: black;
+}
+@media screen and (max-width: 600px) {
+  nav {
+    background-color: rgba(31, 29, 29, 0.808);
+  }
+  nav .logo .image2 {
+    display: block;
+  }
+  nav .logo .image1 {
+    display: none;
+  }
+  nav .mainUser {
+    display: none !important;
+  }
+  nav .search {
+    display: none;
+  }
+  nav .gamburger {
+    display: block !important;
+  }
+  nav .gamburger i {
+    color: white !important;
+    font-size: 20px;
+  }
+}
+
+.mainSection {
+  width: 100%;
+}
+.mainSection .reklama {
+  width: 100%;
+}
+.mainSection .reklama img {
+  object-fit: cover;
+  width: 100%;
+}
+
+h1 h2 h3 h4 h5 h6 p {
+  margin: 0;
+  padding: 0;
+}
+
+.categories-container ul li {
+  cursor: pointer;
+  list-style-type: none;
+  border: 0 solid black;
+  margin: 10px;
+  border-radius: 5px;
+  transition: all 0.15s ease-in-out;
+  padding: 10px 35px;
+  background-color: #F0F0F0;
+  text-decoration: none;
+  color: black;
+  display: inline-flex;
+}
+.categories-container ul li:hover {
+  color: #000;
+}
+
+.text11 {
+  padding: 20px 30px;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0;
+  height: 50px;
+  padding: 0;
+}
+
+.hoverBtn {
+  position: absolute;
+}
+
+.foodsBox {
+  position: relative;
+  overflow: hidden;
+}
+
+.foodsBox:hover {
+  z-index: 20;
+}
+.foodsBox:hover .hoverBtn {
+  position: absolute;
+  left: 215px;
+  top: 182px;
+}
+.foodsBox:hover .hoverBtn .hoverBtn:hover {
+  transition: 0.9;
+}
+
+/*# sourceMappingURL=main.css.map */

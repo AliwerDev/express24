@@ -1,0 +1,84 @@
+input, button{
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  border-bottom: 2px solid #DEDEDE;
+  .logo {
+    img{
+      width: 200px;
+    }
+    .image2 {
+      display: none;
+    }
+    .image1 {
+      display: block;
+    }
+  }
+  .search {
+    width: 300px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    overflow:hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    input{
+      width: 100%;
+      padding: 10px;
+      flex: 1;
+    }
+    button {
+      background: none;
+      i{
+        color: #bfbfbf;
+        font-size: 18px;
+      }
+    }
+  }
+  .minUser {
+    .user {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i {
+        font-size: 18px;
+        color: black;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    background-color: rgba(31, 29, 29, 0.808);
+    .logo {
+      .image2 {
+        display: block;
+      }
+      .image1 {
+        display: none;
+      }
+    }
+    .mainUser {
+      display: none !important;
+    }
+    .search {
+      display: none;
+    }
+    .gamburger {
+      display: block !important;
+      i {
+        color: white !important;
+        font-size: 20px;
+      }
+    }
+  }
+}
